@@ -1,0 +1,68 @@
+{
+  "name": "NIU EU Service Wiki",
+  "logo": {
+    "light": "/images/niu-logo.png",
+    "dark": "/images/niu-logo.png"
+  },
+  "favicon": "/images/favicon.png",
+  "colors": {
+    "primary": "#E8001C",
+    "light": "#FF3347",
+    "dark": "#B80016"
+  },
+  "topbarLinks": [
+    {
+      "name": "After-Sales Support",
+      "url": "mailto:aftersales@niu.com"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Submit a Case",
+    "url": "/escalation"
+  },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "escalation"
+      ]
+    },
+    {
+      "group": "Models",
+      "pages": [
+        "models/mqi-gt",
+        "models/mqi-gt-evo",
+        "models/nqi-2016-2017",
+        "models/nqi-series",
+        "models/nqi-gt",
+        "models/nqi-gts",
+        "models/nqi-x",
+        "models/nqi-cargo",
+        "models/nqi-sharing",
+        "models/uqi",
+        "models/uqi-gt",
+        "models/n1s",
+        "models/xqi3"
+      ]
+    },
+    {
+      "group": "Repair by Category",
+      "pages": [
+        "repair/body-panels",
+        "repair/brakes",
+        "repair/motor-drivetrain",
+        "repair/battery-bms",
+        "repair/electrical-controller",
+        "repair/display-dashboard",
+        "repair/suspension",
+        "repair/wheels-tires",
+        "repair/locks-security",
+        "repair/diagnostic-codes"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://www.niu.com"
+  }
+}

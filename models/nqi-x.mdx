@@ -1,0 +1,59 @@
+---
+title: "NQi X"
+description: "Service reference for the NIU NQi X electric scooter."
+---
+
+## Model Overview
+
+| Specification | Value |
+|---------------|-------|
+| Caster angle | 26.5° |
+| Tire pressure (front) | 1.7 bar |
+| Tire pressure (rear) | 2.3 bar |
+
+## Quick Navigation
+
+<CardGroup cols={2}>
+  <Card title="Body & Panels" icon="puzzle-piece" href="/repair/body-panels">
+    Panel removal and reassembly
+  </Card>
+  <Card title="Brakes" icon="circle-stop" href="/repair/brakes">
+    Hydraulic disc brake service
+  </Card>
+  <Card title="Motor & Drivetrain" icon="gear" href="/repair/motor-drivetrain">
+    Motor removal and failure diagnosis
+  </Card>
+  <Card title="Battery & BMS" icon="battery-full" href="/repair/battery-bms">
+    Battery pack and BMS troubleshooting
+  </Card>
+  <Card title="Electrical & Controller" icon="bolt" href="/repair/electrical-controller">
+    ECU/FOC, wiring, protection modes
+  </Card>
+  <Card title="Diagnostic Codes" icon="code" href="/repair/diagnostic-codes">
+    Error code reference
+  </Card>
+</CardGroup>
+
+## Controller Protection Modes
+
+The NQi X FOC controller includes the following built-in protections:
+
+- Current limit protection
+- Rotation failure (overload) protection
+- Under-voltage / over-voltage protection
+- Power cut-off protection during charging or braking
+- Control loss protection
+
+## Known Failure Points
+
+- ECU firmware — try updating ECU to latest version first
+- Electric faucet lock failure — replace lock
+- BCS failure — replace BCS
+- HALL failure — see [Motor & Drivetrain](/repair/motor-drivetrain)
+- MOSFET failure — see [Electrical & Controller](/repair/electrical-controller)
+- Phase line short — see [Electrical & Controller](/repair/electrical-controller)
+- Controller overtemperature — stop riding, allow to cool, then diagnose FOC
+
+<Warning>
+  If the issue is not resolved after following repair procedures, [escalate to after-sales](/escalation).
+</Warning>

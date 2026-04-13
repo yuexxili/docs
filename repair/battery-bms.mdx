@@ -1,0 +1,75 @@
+---
+title: "Battery & BMS"
+description: "Battery pack inspection, BMS fault diagnosis, and charging issues for NIU scooters."
+---
+
+## Battery Voltages by Model
+
+| Model | Voltage |
+|-------|---------|
+| NQi (2016–2017), NQi Series, NQi Sharing | 51.4V (or 71.4V dual) |
+| NQi Cargo | 51.4V |
+| MQi GT, MQi GT EVO, UQi, UQi GT | 54.6V |
+
+## BMS Status Indicators
+
+| Indicator | Meaning |
+|-----------|---------|
+| ONLINE | BMS functioning normally |
+| OFFLINE | BMS failure — do not continue riding |
+| Red flash (LED) | Fault status — check diagnostic codes |
+| BMS MOS Failure | MOSFET in BMS has failed |
+
+## Charging Rules
+
+<Warning>
+  Always use the original NIU charger. Charging with a non-original charger may cause circuit or battery failure and voids warranty.
+</Warning>
+
+## Failure Diagnosis
+
+<AccordionGroup>
+  <Accordion title="Battery not charging">
+    1. Check charger with a known-good unit if available
+    2. Inspect charging port for damage or corrosion
+    3. Check BMS status — OFFLINE indicates BMS fault
+    4. Check diagnostic code on display — refer to [Diagnostic Codes](/repair/diagnostic-codes)
+    5. If BMS is offline, escalate — do not attempt BMS replacement without authorization
+  </Accordion>
+  <Accordion title="Battery drains faster than expected">
+    1. Check battery age and cycle count (via NIU app if connected)
+    2. Check for parasitic drain — inspect all electrical connections
+    3. Test battery capacity with diagnostic tool
+    4. If capacity is significantly below spec, battery may need replacement — escalate
+  </Accordion>
+  <Accordion title="BMS MOS Failure">
+    Symptom: Display shows BMS MOS failure code.
+
+    1. Power cycle the scooter
+    2. If fault persists, do not charge or ride
+    3. [Escalate to after-sales](/escalation) — BMS replacement required
+  </Accordion>
+  <Accordion title="Battery pack removal (for inspection)">
+    Disassembly order: **Section 4 (seat) → Section 20 (motor access) as noted in the service manual.**
+
+    Preparation: Remove Section 4 first before accessing battery compartment on most models.
+  </Accordion>
+  <Accordion title="Red LED flash on battery">
+    Red flash indicates fault status.
+
+    1. Note the flash pattern (count of flashes)
+    2. Match to diagnostic code list — refer to [Diagnostic Codes](/repair/diagnostic-codes)
+    3. Follow the relevant fault procedure
+  </Accordion>
+</AccordionGroup>
+
+## Battery Safety
+
+- Never short-circuit battery terminals
+- Do not expose battery to temperatures above 45°C or below -20°C
+- Do not puncture or crush the battery pack
+- If battery is swollen, cracked, or leaking — do not charge. Isolate and [escalate immediately](/escalation)
+
+<Note>
+  Battery replacement requires NIU authorization. Do not replace battery packs without contacting after-sales first.
+</Note>

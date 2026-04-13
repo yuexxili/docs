@@ -1,0 +1,87 @@
+---
+title: "Electrical & Controller"
+description: "ECU/FOC controller, wiring, and electrical fault diagnosis for NIU scooters."
+---
+
+## Controller Types by Model
+
+| Model | Controller |
+|-------|-----------|
+| MQi GT, MQi GT EVO | FOC (Field Oriented Controller) |
+| NQi GT, NQi GTS, NQi Series | FOC |
+| NQi Sharing | U3LTE ECU |
+| NQi (2016–2017) | ECU |
+| UQi, UQi GT | FOC |
+
+## MOSFET Failure
+
+MOSFET failure means the power transistors in the controller have failed. Symptom: controller self-check fails on startup.
+
+<Steps>
+  <Step title="Confirm the fault">
+    Check for MOSFET failure code on the display — refer to [Diagnostic Codes](/repair/diagnostic-codes).
+  </Step>
+  <Step title="Power cycle">
+    Turn scooter off and on. If fault clears, monitor for recurrence.
+  </Step>
+  <Step title="Inspect controller">
+    Check controller connectors and wiring for damage, corrosion, or loose contacts.
+  </Step>
+  <Step title="Replace controller">
+    If MOSFET fault persists, controller replacement is required. [Escalate to after-sales](/escalation).
+  </Step>
+</Steps>
+
+## Phase Line Faults
+
+Phase line faults occur when one or more of the motor phase wires (U, V, W) has a short circuit or open circuit.
+
+<AccordionGroup>
+  <Accordion title="Phase line short">
+    1. Disconnect motor phase connectors
+    2. Measure resistance between each phase pair — should be equal
+    3. A near-zero reading indicates a short — inspect wiring and motor windings
+    4. Replace motor if windings are shorted
+  </Accordion>
+  <Accordion title="Phase line open / default">
+    1. Check phase wire connectors for damage or corrosion
+    2. Reseat all phase connectors firmly
+    3. If fault persists, check motor windings — replace motor if open circuit found
+  </Accordion>
+</AccordionGroup>
+
+## Controller Temperature Fault
+
+If controller overtemperature is detected:
+
+1. Stop riding immediately
+2. Allow scooter to cool in a shaded area (15–30 minutes)
+3. Check ventilation around the controller area — ensure no panels are blocking airflow
+4. Restart and test — if fault recurs quickly, controller may be failing
+5. [Escalate to after-sales](/escalation) if fault repeats
+
+## Communication Bus Failure
+
+Symptom: Display shows communication error; scooter may not start.
+
+1. Check all ECU/FOC harness connectors — reseat firmly
+2. Inspect CAN bus wiring for damage or pinching
+3. Power cycle the scooter
+4. If fault persists, [escalate to after-sales](/escalation)
+
+## NQi X — ECU Firmware
+
+<Note>
+  For NQi X: first try updating the ECU to the latest firmware version before replacing any components. Many faults on this model are resolved by firmware update.
+</Note>
+
+## Wiring Inspection Checklist
+
+- Check all connectors for corrosion, bent pins, or loose fit
+- Inspect harness for chafing against frame or sharp edges
+- Check DC-DC converter output (should be stable 12V)
+- Verify ground connections at battery and frame
+
+<Warning>
+  Disconnect the battery before working on any electrical components.
+</Warning>

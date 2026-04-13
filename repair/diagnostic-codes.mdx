@@ -1,0 +1,70 @@
+---
+title: "Diagnostic Codes"
+description: "Error code reference for NIU electric scooters. Look up a code to find the cause and resolution steps."
+---
+
+## How to Read Diagnostic Codes
+
+Error codes are displayed on the scooter's dashboard. On some models, they are also indicated by LED flash patterns on the battery pack.
+
+<Note>
+  Always note the exact code before starting diagnosis. Some codes clear after power cycling — if the code does not reappear, monitor the scooter for recurrence.
+</Note>
+
+## Common Error Codes
+
+The following codes appear across multiple NIU models. Model-specific codes will be added per model as content is expanded.
+
+### Motor & Controller Codes
+
+| Code / Description | Cause | Action |
+|--------------------|-------|--------|
+| HALL failure | Hall sensor fault in motor | Check HALL sensor connector. Replace sensor if faulty. See [Motor & Drivetrain](/repair/motor-drivetrain) |
+| MOSFET failure | Controller power transistor failed (self-check failed) | Replace controller. See [Electrical & Controller](/repair/electrical-controller) |
+| Phase line short / default | Motor phase wire short circuit or open | Inspect phase wiring and motor windings. See [Electrical & Controller](/repair/electrical-controller) |
+| Controller over-temperature | Controller too hot | Stop riding, allow to cool. Check ventilation. See [Electrical & Controller](/repair/electrical-controller) |
+| Rotation failure (overload) | Motor overloaded / over-current | Check for mechanical obstruction. See [Motor & Drivetrain](/repair/motor-drivetrain) |
+| Control loss | Control signal lost | Check harness and ECU connectors. See [Electrical & Controller](/repair/electrical-controller) |
+| Communication bus failure | CAN bus or communication error | Reseat all ECU connectors. See [Electrical & Controller](/repair/electrical-controller) |
+
+### Battery & BMS Codes
+
+| Code / Description | Cause | Action |
+|--------------------|-------|--------|
+| BMS OFFLINE | BMS has failed | Do not charge or ride. Escalate to after-sales. See [Battery & BMS](/repair/battery-bms) |
+| BMS MOS Failure | BMS MOSFET failed | Do not charge or ride. Escalate to after-sales. See [Battery & BMS](/repair/battery-bms) |
+| Under-voltage protection | Battery voltage too low | Charge battery. If fault persists after full charge, test battery. See [Battery & BMS](/repair/battery-bms) |
+| Over-voltage protection | Battery voltage too high | Check charger. Do not charge further. See [Battery & BMS](/repair/battery-bms) |
+| Red LED flash on battery | Fault status | Count flash pattern, match to model-specific code list. See [Battery & BMS](/repair/battery-bms) |
+
+### Protection & Safety Codes
+
+| Code / Description | Cause | Action |
+|--------------------|-------|--------|
+| Current limit protection | Output current being limited | Normal during heavy load. Persistent = check motor and wiring |
+| Power cut-off (charging) | Power cut during charge event | Check charger and charging port |
+| Power cut-off (braking) | Power cut during braking | Check brake lever switch signal |
+
+## Model-Specific Code Lists
+
+Full diagnostic code tables from each service manual will be added here as content is expanded.
+
+| Model | Status |
+|-------|--------|
+| MQi GT / MQi GT EVO | Pending |
+| NQi Series | Pending |
+| NQi X | Pending |
+| UQi / UQi GT | Pending |
+| XQi3 | Pending |
+
+<Note>
+  To request priority content for a specific model, contact the NIU EU after-sales team.
+</Note>
+
+## LED Flash Code Reference
+
+Some models use battery LED flash patterns to indicate fault codes. Count the number of flashes in a sequence to identify the fault. Refer to the model-specific service manual for the full flash code table.
+
+<Warning>
+  If a fault code cannot be identified or resolved, [escalate to after-sales](/escalation) with the exact code and model details.
+</Warning>

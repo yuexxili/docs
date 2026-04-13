@@ -1,0 +1,84 @@
+---
+title: "Locks & Security"
+description: "Power lock, electronic handlebar lock, and alarm system repair for NIU scooters."
+---
+
+## Lock Types by Model
+
+| Model | Lock Type |
+|-------|-----------|
+| NQi (2016–2017) | Power Lock |
+| NQi Sharing | Power Lock + Electronic Handlebar Lock + Lock Controller Unit |
+| NQi X | Electric Faucet Lock |
+| Most others | Power Lock |
+
+## Power Lock
+
+### Inspection
+
+1. Test key operation — lock should engage and disengage smoothly
+2. Check lock connector and wiring — inspect for damage or corrosion
+3. Check alarm function (if integrated)
+
+### Failure Diagnosis
+
+<AccordionGroup>
+  <Accordion title="Lock not engaging">
+    1. Check for foreign objects in lock mechanism
+    2. Inspect lock actuator — test with direct power if accessible
+    3. Check connector and wiring from ECU to lock
+    4. Replace lock unit if actuator is faulty
+  </Accordion>
+  <Accordion title="Scooter does not power on after locking">
+    1. Check lock switch signal to ECU
+    2. Inspect wiring harness for damage
+    3. Confirm ECU is receiving correct signal
+    4. If ECU fault — see [Electrical & Controller](/repair/electrical-controller)
+  </Accordion>
+</AccordionGroup>
+
+## Electronic Handlebar Lock (NQi Sharing)
+
+The NQi Sharing uses an electronic handlebar lock controlled by the Lock Controller Unit.
+
+### Failure Diagnosis
+
+<AccordionGroup>
+  <Accordion title="Handlebar lock not releasing">
+    1. Power cycle the scooter
+    2. Check Lock Controller Unit connector — reseat
+    3. Check wiring from Lock Controller Unit to handlebar lock actuator
+    4. Replace lock actuator if faulty
+    5. Replace Lock Controller Unit if actuator tests good but lock still fails
+  </Accordion>
+  <Accordion title="Handlebar lock not engaging">
+    1. Check lock actuator for mechanical obstruction
+    2. Test actuator with direct power
+    3. Replace if faulty
+  </Accordion>
+</AccordionGroup>
+
+## Electric Faucet Lock (NQi X)
+
+<Note>
+  For NQi X: if the electric faucet lock fails, replace the lock unit. First try updating the ECU firmware — some lock faults are resolved by firmware update.
+</Note>
+
+### Replacement Procedure
+
+1. Remove relevant body panels — refer to [Body & Panels](/repair/body-panels)
+2. Disconnect lock wiring connector
+3. Unscrew lock mounting bolts
+4. Install new lock unit
+5. Reconnect wiring and test before reassembling panels
+
+## Alarm System
+
+The alarm system is integrated with the ECU on most models.
+
+- If alarm triggers falsely: check side stand switch — a faulty side stand switch can trigger the alarm
+- If alarm does not respond: check ECU wiring and alarm unit connector
+
+<Warning>
+  If the lock or alarm system cannot be resolved, [escalate to after-sales](/escalation). Do not attempt to bypass the security system.
+</Warning>

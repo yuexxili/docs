@@ -1,0 +1,80 @@
+---
+title: "Motor & Drivetrain"
+description: "Motor removal, inspection, and failure diagnosis for NIU scooters."
+---
+
+## Motor Types by Model
+
+| Model | Motor Type |
+|-------|-----------|
+| MQi GT, MQi GT EVO | 2.5×14 wheel-hub motor |
+| NQi (2016–2017), NQi Series, NQi Sharing | 3.50×12 wheel-hub motor |
+| NQi Cargo | 1.8 kW / 1500W hub motor |
+| NQi Cargo (high power) | 2.9 kW / 3000W hub motor |
+| UQi GT | 2.5×14 wheel-hub motor |
+| UQi | Hub motor |
+
+## Motor Removal
+
+<Warning>
+  Disconnect the battery before removing the motor. Follow the panel removal sequence for your model first (see [Body & Panels](/repair/body-panels)).
+</Warning>
+
+General removal order: **Remove Section 4 (seat) → then access motor (Section 20 on most models).**
+
+## Failure Diagnosis
+
+<AccordionGroup>
+  <Accordion title="Motor not running / no power to motor">
+    1. Check controller output — refer to [Electrical & Controller](/repair/electrical-controller)
+    2. Check phase wire connections (U, V, W) — inspect for loose or broken connections
+    3. Check HALL sensor connector — reseat or replace
+    4. Check for diagnostic error code on display — refer to [Diagnostic Codes](/repair/diagnostic-codes)
+  </Accordion>
+  <Accordion title="HALL sensor failure">
+    Symptom: Motor jerks, stutters, or fails to start smoothly.
+
+    1. Check HALL sensor connector for damage or corrosion
+    2. Measure HALL sensor signal with multimeter
+    3. Replace HALL sensor if faulty
+    4. If fault persists after replacement, check controller — see [Electrical & Controller](/repair/electrical-controller)
+  </Accordion>
+  <Accordion title="Motor overload / rotation failure">
+    The controller automatically limits output current during overload to protect the system.
+
+    1. Check for mechanical obstruction (debris, binding)
+    2. Check tire condition and inflation — see [Wheels & Tires](/repair/wheels-tires)
+    3. Allow motor to cool if overheated
+    4. Check load — NQi Cargo overload is common under heavy cargo
+    5. If fault code appears, refer to [Diagnostic Codes](/repair/diagnostic-codes)
+  </Accordion>
+  <Accordion title="Motor noise (grinding, clicking, humming)">
+    1. Check wheel bearings — replace if worn
+    2. Check for foreign objects in motor/wheel assembly
+    3. Check motor mounting bolts for looseness
+    4. If noise persists, motor may need replacement — escalate to after-sales
+  </Accordion>
+  <Accordion title="Motor failure (confirmed)">
+    If motor is confirmed faulty after diagnosis:
+    1. Document the fault and steps taken
+    2. [Escalate to after-sales](/escalation) for replacement authorization
+  </Accordion>
+</AccordionGroup>
+
+## Controller Protection Modes
+
+The FOC/ECU controller will cut motor power under these conditions:
+
+| Protection | Description |
+|------------|-------------|
+| Current limit | Output current limited during overload |
+| Rotation failure | Motor stopped if over-current persists |
+| Under-voltage | Motor stopped if battery too low |
+| Over-voltage | Motor stopped if voltage too high |
+| Power cut-off | During charging or braking |
+| Control loss | Motor stopped if control signal lost |
+| Over-temperature | Motor stopped if controller too hot |
+
+<Note>
+  After any controller protection event, wait for the system to reset before retesting. If the fault repeats immediately, run full diagnosis.
+</Note>
