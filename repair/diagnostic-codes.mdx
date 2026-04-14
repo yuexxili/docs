@@ -1,70 +1,310 @@
 ---
 title: "Diagnostic Codes"
-description: "Error code reference for NIU electric scooters. Look up a code to find the cause and resolution steps."
+description: "Complete error code reference for all NIU EU scooter models. Look up a code to find the cause and resolution."
 ---
 
 ## How to Read Diagnostic Codes
 
-Error codes are displayed on the scooter's dashboard. On some models, they are also indicated by LED flash patterns on the battery pack.
+Error codes appear on the scooter's dashboard display as a number. Some models also indicate faults via LED flash patterns on the battery pack (red flash = fault status).
 
 <Note>
-  Always note the exact code before starting diagnosis. Some codes clear after power cycling — if the code does not reappear, monitor the scooter for recurrence.
+  Always note the exact code before starting diagnosis. Some codes clear after power cycling — if the code does not reappear, monitor for recurrence before returning the scooter.
 </Note>
 
-## Common Error Codes
+## Quick Code Lookup
 
-The following codes appear across multiple NIU models. Model-specific codes will be added per model as content is expanded.
+| Code | Meaning | Category | Models |
+|------|---------|----------|--------|
+| 0 | Communication bus failure | Electrical | NQi X |
+| 10 | FOC controller locked rotor (stalled) | Motor/Controller | All |
+| 11 | FOC controller under/over-voltage | Battery/Controller | All |
+| 12 | FOC controller over-current | Motor/Controller | All |
+| 13 | FOC controller over-temperature | Controller | All |
+| 22 | BCS over-temperature | Battery | NQi GT, NQi GTS, NQi Cargo |
+| 23 | BCS low-temperature | Battery | NQi GT, NQi GTS, NQi Cargo, NQi X |
+| 30 | Battery 1 over-charge protection | Battery | All |
+| 31 | Battery 1 charging over-current | Battery | All |
+| 32 | Battery 1 charging low-temperature | Battery | All |
+| 33 | Battery 1 charging high-temperature | Battery | NQi X |
+| 50 | Battery 2 over-charge protection | Battery | Dual battery models |
+| 51 | Battery 2 charging over-current | Battery | Dual battery models |
+| 60 | SIM card recognition failed | ECU/Connectivity | NQi X, NQi Sharing |
+| 62 | GPS problem | ECU/Connectivity | NQi X, NQi Sharing |
+| 63 | GPS short circuit | ECU/Connectivity | NQi X, NQi Sharing |
+| 64 | GPS open circuit | ECU/Connectivity | NQi X, NQi Sharing |
+| 65 | SN number not written in ECU (factory fault) | ECU | NQi X |
+| 67 | Network signal poor | Connectivity | NQi X, NQi Sharing |
+| 72 | Electric faucet power failure | Locks | NQi X |
+| 80 | Fast charger power temperature protection | Charging | NQi GT, NQi GTS |
+| 99 | Communication bus failure | Electrical | All |
+| 110 | FOC/controller power fault | Controller | All |
+| 111 | FOC verification failed (no ECU communication) | Controller | All |
+| 120 | Motor fault / phase line failure | Motor | All |
+| 121 | BCS MOSFET damaged | Battery | NQi GT, NQi GTS, NQi X |
+| 122 | BCS discharge over-current protection | Battery | NQi X |
+| 123 | Motor signal line failure (Hall/encoder) | Motor | NQi X |
+| 124 | Motor overheating fault | Motor | NQi X |
+| 125 | Wrong motor version | Motor | NQi X |
+| 126 | Motor information cannot be obtained | Motor | NQi X |
+| 130 | Battery 1 over-discharge protection | Battery | All |
+| 131 | Battery 1 discharge over-current protection | Battery | All |
+| 132 | Battery 1 over-heat protection | Battery | All |
+| 133 | Battery 1 low-temperature protection | Battery | All |
+| 134 | Battery 1 open circuit or imbalance | Battery | All |
+| 135 | Battery 1 short-circuit protection | Battery | All |
+| 136 | Battery 1 water ingress detected | Battery | All |
+| 137 | Battery 1 charging over-current alarm | Battery | NQi X |
+| 138 | Battery 1 MOS transistor damaged | Battery | All |
+| 139 | Battery 1 other BMS fault | Battery | NQi X |
+| 140 | Throttle fault | Throttle | All |
+| 141 | Throttle open circuit | Throttle | NQi X |
+| 142 | Throttle short circuit | Throttle | NQi X |
+| 150 | Battery 2 over-discharge protection | Battery | Dual battery models |
+| 151 | Battery 2 discharge over-current protection | Battery | Dual battery models |
+| 152 | Battery 2 over-heat protection | Battery | Dual battery models |
+| 153 | Battery 2 low-temperature protection | Battery | Dual battery models |
+| 154 | Battery 2 open circuit or imbalance | Battery | Dual battery models |
+| 155 | Battery 2 short-circuit protection | Battery | Dual battery models |
+| 156 | Battery 2 water ingress detected | Battery | Dual battery models |
+| 158 | Battery 2 MOS transistor damaged | Battery | Dual battery models |
+| 161 | Scooter locked remotely | Locks | NQi X, NQi Series, NQi 2016-17 |
+| 162 | Electric faucet lock failure | Locks | NQi X |
+| 163 | Electric seat lock failure | Locks | NQi X |
+| 165 | BMS 1 and BMS 2 number mismatch | Battery | NQi X |
+| 166 | Battery not compatible with this model | Battery | NQi X |
+| 170 | DCDC failure (covers 171-175, 178) | Electrical | NQi X |
+| 171 | DCDC opening failure | Electrical | NQi X |
+| 172 | DCDC output over-voltage | Electrical | NQi X |
+| 173 | DCDC output under-voltage | Electrical | NQi X |
+| 174 | DCDC output current fault | Electrical | NQi X |
+| 175 | DCDC temperature / hardware fault | Electrical | NQi X |
+| 178 | Lead-acid battery voltage low (below 10V) | Battery | NQi X |
+| 183 | Fast charger short-circuit protection | Charging | NQi GT, NQi GTS |
+| 190 | Controller communication failure | Controller | All |
+| 191 | Controller communication failure (secondary) | Controller | All |
+| 194 | BCS no communication | Battery | NQi X |
+| 195 | DCDC communication failure | Electrical | NQi X |
 
-### Motor & Controller Codes
+---
 
-| Code / Description | Cause | Action |
-|--------------------|-------|--------|
-| HALL failure | Hall sensor fault in motor | Check HALL sensor connector. Replace sensor if faulty. See [Motor & Drivetrain](/repair/motor-drivetrain) |
-| MOSFET failure | Controller power transistor failed (self-check failed) | Replace controller. See [Electrical & Controller](/repair/electrical-controller) |
-| Phase line short / default | Motor phase wire short circuit or open | Inspect phase wiring and motor windings. See [Electrical & Controller](/repair/electrical-controller) |
-| Controller over-temperature | Controller too hot | Stop riding, allow to cool. Check ventilation. See [Electrical & Controller](/repair/electrical-controller) |
-| Rotation failure (overload) | Motor overloaded / over-current | Check for mechanical obstruction. See [Motor & Drivetrain](/repair/motor-drivetrain) |
-| Control loss | Control signal lost | Check harness and ECU connectors. See [Electrical & Controller](/repair/electrical-controller) |
-| Communication bus failure | CAN bus or communication error | Reseat all ECU connectors. See [Electrical & Controller](/repair/electrical-controller) |
+## Codes by Category
 
-### Battery & BMS Codes
+### Motor & Controller (10-13, 110, 111, 120, 190, 191)
 
-| Code / Description | Cause | Action |
-|--------------------|-------|--------|
-| BMS OFFLINE | BMS has failed | Do not charge or ride. Escalate to after-sales. See [Battery & BMS](/repair/battery-bms) |
-| BMS MOS Failure | BMS MOSFET failed | Do not charge or ride. Escalate to after-sales. See [Battery & BMS](/repair/battery-bms) |
-| Under-voltage protection | Battery voltage too low | Charge battery. If fault persists after full charge, test battery. See [Battery & BMS](/repair/battery-bms) |
-| Over-voltage protection | Battery voltage too high | Check charger. Do not charge further. See [Battery & BMS](/repair/battery-bms) |
-| Red LED flash on battery | Fault status | Count flash pattern, match to model-specific code list. See [Battery & BMS](/repair/battery-bms) |
+<AccordionGroup>
+  <Accordion title="10 — FOC controller locked rotor (stalled)">
+    **Cause:** Motor is mechanically stuck or brakes are applied while throttle is open.
 
-### Protection & Safety Codes
+    **Resolution:**
+    1. Check for mechanical obstruction in wheel/motor
+    2. Check brake lever switches — ensure brakes are fully released
+    3. Check FOC-Motor-ECU-Harness connections
+    4. If clear, check motor phase lines — see [Motor & Drivetrain](/repair/motor-drivetrain)
+  </Accordion>
+  <Accordion title="11 — FOC controller under/over-voltage">
+    **Cause:** Battery voltage outside safe range for the controller.
 
-| Code / Description | Cause | Action |
-|--------------------|-------|--------|
-| Current limit protection | Output current being limited | Normal during heavy load. Persistent = check motor and wiring |
-| Power cut-off (charging) | Power cut during charge event | Check charger and charging port |
-| Power cut-off (braking) | Power cut during braking | Check brake lever switch signal |
+    **Resolution:**
+    1. Check battery charge level — charge if low
+    2. Check battery voltage with multimeter
+    3. Check Battery-FOC-ECU-Motor-Harness connections
+    4. If battery is within spec and fault persists, suspect FOC failure
+  </Accordion>
+  <Accordion title="12 — FOC controller over-current">
+    **Cause:** Motor drawing more current than controller limit.
 
-## Model-Specific Code Lists
+    **Resolution:**
+    1. Check for mechanical load on motor (obstruction, seized bearing)
+    2. Check FOC-Motor-Harness connections
+    3. Allow to cool and retry — if recurs, escalate
+  </Accordion>
+  <Accordion title="13 — FOC controller over-temperature">
+    **Cause:** Controller temperature exceeded limit.
 
-Full diagnostic code tables from each service manual will be added here as content is expanded.
+    **Resolution:**
+    1. Stop riding — allow controller to cool (15-30 min)
+    2. Check ventilation around FOC area
+    3. If fault recurs immediately after cooling, FOC may be failing — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="110 — FOC/Controller power fault">
+    **Cause:** FOC driver power fault — internal power supply failure.
 
-| Model | Status |
-|-------|--------|
-| MQi GT / MQi GT EVO | Pending |
-| NQi Series | Pending |
-| NQi X | Pending |
-| UQi / UQi GT | Pending |
-| XQi3 | Pending |
+    **Resolution:**
+    1. Check FOC-ECU-Dashboard-Harness-Throttle connections
+    2. Power cycle scooter
+    3. If fault persists, replace FOC controller — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="111 — FOC verification failed">
+    **Cause:** FOC cannot communicate with ECU.
+
+    **Resolution:**
+    1. Check FOC-ECU-Dashboard-Harness connections — reseat all
+    2. Power cycle
+    3. If fault persists — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="120 — Motor fault / phase line failure">
+    **Cause:** Missing motor phase — scooter unable to ride.
+
+    **Resolution:**
+    1. Check motor phase wire connections (U, V, W)
+    2. Inspect for damaged or disconnected phase wires
+    3. If wiring is good, motor windings may be faulty — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="190 / 191 — Controller communication failure">
+    **Cause:** Controller cannot communicate with ECU/Dashboard.
+
+    **Resolution:**
+    1. Reseat all ECU and FOC harness connectors
+    2. Inspect CAN bus wiring for damage
+    3. Power cycle
+    4. If fault persists — [escalate](/escalation)
+  </Accordion>
+</AccordionGroup>
+
+### Battery & BMS (22-23, 30-33, 50-51, 80, 121-122, 130-139, 150-158, 165-166, 178, 183, 194)
+
+<AccordionGroup>
+  <Accordion title="30 — Battery 1 over-charge protection">
+    **Cause:** Battery 1 voltage reached over-charge threshold (71.4V on 60V models / 51.5V on 48V models).
+
+    **Resolution:**
+    1. Stop charging immediately
+    2. Check charger — use only original NIU charger
+    3. If BMS failed to cut off charging — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="130 — Battery 1 over-discharge protection">
+    **Cause:** Battery 1 discharged below safe threshold.
+
+    **Resolution:**
+    1. Charge battery immediately with original NIU charger
+    2. If battery does not recover after full charge — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="131 — Battery 1 discharge over-current">
+    **Cause:** Battery discharging at too high a current.
+
+    **Resolution:**
+    1. Check for motor overload — see [Motor & Drivetrain](/repair/motor-drivetrain)
+    2. Check throttle for stuck condition
+    3. If fault occurs at normal load — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="132 / 133 — Battery 1 over-heat / low-temperature protection">
+    **Cause:** Battery temperature outside safe operating range.
+
+    **Resolution:**
+    - **Over-heat (132):** Stop riding, cool battery in shade. Do not charge until cooled.
+    - **Low-temp (133):** Warm scooter to above 0°C before riding. Normal in cold weather — advise customer.
+  </Accordion>
+  <Accordion title="134 — Battery 1 open circuit or imbalance">
+    **Cause:** Cell imbalance or open circuit within battery pack.
+
+    **Resolution:**
+    1. Power cycle
+    2. If fault persists — [escalate](/escalation), battery pack has internal failure
+  </Accordion>
+  <Accordion title="135 — Battery 1 short-circuit protection">
+    **Cause:** Short circuit detected in battery pack.
+
+    **Resolution:** Do not charge or ride. Isolate battery — [escalate immediately](/escalation)
+  </Accordion>
+  <Accordion title="136 — Battery 1 water ingress">
+    **Cause:** Water detected inside battery pack.
+
+    **Resolution:** Do not charge or ride. Isolate battery — [escalate immediately](/escalation)
+  </Accordion>
+  <Accordion title="138 — Battery 1 MOS transistor damaged">
+    **Cause:** MOSFET in battery BMS has failed.
+
+    **Resolution:** Do not charge or ride — [escalate immediately](/escalation)
+  </Accordion>
+  <Accordion title="121 — BCS MOSFET damaged">
+    **Cause:** MOSFET in Battery Control System has failed.
+
+    **Resolution:** Do not charge or ride — [escalate immediately](/escalation)
+  </Accordion>
+</AccordionGroup>
+
+### Throttle (140-142)
+
+<AccordionGroup>
+  <Accordion title="140 — Throttle fault">
+    **Cause:** Throttle signal abnormal.
+
+    **Resolution:**
+    1. Check throttle connector — reseat
+    2. Inspect throttle wiring for damage
+    3. Replace throttle assembly if faulty
+  </Accordion>
+  <Accordion title="141 / 142 — Throttle open/short circuit (NQi X)">
+    **Cause:** Open or short circuit in throttle wiring.
+
+    **Resolution:**
+    1. Inspect throttle wiring for damage or chafing
+    2. Replace throttle assembly
+  </Accordion>
+</AccordionGroup>
+
+### Connectivity & Locks (60-67, 72, 99, 161-163)
+
+<AccordionGroup>
+  <Accordion title="99 — Communication bus failure">
+    **Cause:** ECU or harness communication failure (highest priority fault).
+
+    **Resolution:**
+    1. Reseat all ECU harness connectors
+    2. Inspect wiring for damage
+    3. Power cycle
+    4. If fault persists — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="60 / 62 / 63 / 64 — SIM / GPS fault (NQi X, NQi Sharing)">
+    **Cause:** SIM card or GPS module problem.
+
+    **Resolution:**
+    1. Check SIM card seating — replace if damaged
+    2. Check GPS antenna connection
+    3. If ECU is faulty — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="161 — Scooter locked remotely">
+    **Cause:** Scooter remotely locked via NIU system.
+
+    **Resolution:** Contact NIU after-sales to unlock — [escalate](/escalation)
+  </Accordion>
+  <Accordion title="162 — Electric faucet lock failure (NQi X)">
+    **Cause:** Electric handlebar lock failure. Faucet may not be turned fully left when powering off.
+
+    **Resolution:**
+    1. First: update ECU to latest firmware
+    2. If fault persists: replace electric faucet lock
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Model Comparison: Code Coverage
+
+| Code Range | MQi GT/EVO | NQi 16-17 | NQi Series | NQi GT | NQi GTS | NQi X | NQi Cargo | NQi Sharing | UQi/UQi GT |
+|------------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 10-13 (FOC) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 30-33 (Bat 1 charge) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 50-51 (Bat 2 charge) | — | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| 60-67 (GPS/SIM) | — | — | — | — | — | ✅ | — | ✅ | — |
+| 72, 162-163 (Locks) | — | — | — | — | — | ✅ | — | — | — |
+| 99 (Comm bus) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 110-111 (FOC power) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 120-126 (Motor) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 121 (BCS MOSFET) | — | — | — | ✅ | ✅ | ✅ | ✅ | — | ✅ |
+| 130-139 (Bat 1 discharge) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 140-142 (Throttle) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 150-158 (Bat 2 discharge) | — | — | — | ✅ | ✅ | ✅ | ✅ | ✅ | — |
+| 161 (Remote lock) | — | ✅ | ✅ | — | — | ✅ | — | — | — |
+| 165-166 (BMS mismatch) | — | — | — | — | — | ✅ | — | — | — |
+| 170-178 (DCDC) | — | — | — | — | — | ✅ | — | — | — |
+| 190-191 (Comm failure) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| 194-195 (BCS/DCDC comm) | — | — | — | — | — | ✅ | — | — | — |
 
 <Note>
-  To request priority content for a specific model, contact the NIU EU after-sales team.
+  N1S and XQi3 code lists are pending manual entry — their service manuals are image-based and could not be automatically extracted.
 </Note>
-
-## LED Flash Code Reference
-
-Some models use battery LED flash patterns to indicate fault codes. Count the number of flashes in a sequence to identify the fault. Refer to the model-specific service manual for the full flash code table.
 
 <Warning>
-  If a fault code cannot be identified or resolved, [escalate to after-sales](/escalation) with the exact code and model details.
+  If a fault cannot be resolved after following the steps above, [escalate to after-sales](/escalation) with the exact code and model details.
 </Warning>
