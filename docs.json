@@ -1,68 +1,56 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "NIU EU Service Wiki",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#E8001C",
+    "light": "#FF3347",
+    "dark": "#B80016"
   },
   "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Service Wiki",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introduction",
+              "escalation"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Models",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "models/mqi-gt",
+              "models/mqi-gt-evo",
+              "models/nqi-2016-2017",
+              "models/nqi-series",
+              "models/nqi-gt",
+              "models/nqi-gts",
+              "models/nqi-x",
+              "models/nqi-cargo",
+              "models/nqi-sharing",
+              "models/uqi",
+              "models/uqi-gt",
+              "models/n1s",
+              "models/xqi3"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Repair by Category",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "repair/body-panels",
+              "repair/brakes",
+              "repair/motor-drivetrain",
+              "repair/battery-bms",
+              "repair/electrical-controller",
+              "repair/display-dashboard",
+              "repair/suspension",
+              "repair/wheels-tires",
+              "repair/locks-security",
+              "repair/diagnostic-codes"
             ]
           }
         ]
@@ -71,14 +59,9 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Submit a Case",
+          "href": "escalation",
+          "icon": "arrow-up-right"
         }
       ]
     }
@@ -90,33 +73,19 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "After-Sales Support",
+        "href": "mailto:aftersales@niu.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Submit a Case",
+      "href": "escalation"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://www.niu.com"
     }
   }
 }
