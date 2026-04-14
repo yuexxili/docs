@@ -60,7 +60,7 @@
       "anchors": [
         {
           "anchor": "Submit a Case",
-          "href": "escalation",
+          "href": "/escalation",
           "icon": "arrow-up-right"
         }
       ]
@@ -80,7 +80,7 @@
     "primary": {
       "type": "button",
       "label": "Submit a Case",
-      "href": "escalation"
+      "href": "https://niu-474ef864.mintlify.app/escalation"
     }
   },
   "footer": {
