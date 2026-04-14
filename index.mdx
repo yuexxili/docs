@@ -1,97 +1,66 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Welcome to the NIU EU Service Wiki"
+description: "A technical reference for authorized NIU dealers to diagnose and repair NIU electric scooters."
 ---
 
-## Setting up
+## What This Wiki Is For
 
-Get your documentation site up and running in minutes.
+This wiki is for **authorized NIU dealers and service technicians** responsible for first-line diagnosis and repair of NIU electric scooters sold in the European market.
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+Use this wiki to:
+- Look up repair procedures by **model** or **issue category**
+- Reference **diagnostic error codes**
+- Understand when and how to **escalate** to NIU after-sales
 
-## Make it yours
+<Warning>
+  This wiki is intended for trained technicians only. Improper repair can cause injury or damage to the scooter. Always follow safety procedures.
+</Warning>
 
-Design a docs site that looks great and empowers your users.
+## How to Find What You Need
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+<CardGroup cols={2}>
+  <Card title="Browse by Model" icon="scooter" href="/models/mqi-gt">
+    Start here if you already know which model you're working on.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Browse by Issue" icon="wrench" href="/repair/brakes">
+    Start here if you know the symptom or system that needs attention.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Diagnostic Codes" icon="code" href="/repair/diagnostic-codes">
+    Look up an error code shown on the display.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Escalation Guide" icon="arrow-up-right" href="/escalation">
+    Know when to contact NIU after-sales and how to submit a case.
   </Card>
-</Columns>
+</CardGroup>
 
-## Create beautiful pages
+## Supported Models
 
-Everything you need to create world-class documentation.
+| Series | Models |
+|--------|--------|
+| MQi    | MQi GT, MQi GT EVO |
+| NQi    | NQi (2016–2017), NQi Series, NQi GT, NQi GTS, NQi X, NQi Cargo, NQi Sharing |
+| UQi    | UQi, UQi GT |
+| N      | N1S |
+| XQi    | XQi3 |
 
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+## Safety Reminders
 
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+<AccordionGroup>
+  <Accordion title="Before you begin any repair">
+    - Power off the scooter completely
+    - Disconnect the battery before working on electrical systems
+    - Use metric tools wherever possible
+    - Do not use non-original parts unless confirmed as equivalent
+  </Accordion>
+  <Accordion title="During disassembly">
+    - Loosen multiple assemblies from outside to inside
+    - Store parts in installation sequence for reassembly
+    - Remove dirt and oil stains before taking measurements
+    - Apply recommended lubricants after reassembly
+  </Accordion>
+  <Accordion title="After repair">
+    - Test all repaired systems before returning the scooter to the customer
+    - Document the repair and any replaced parts
+    - If the issue persists, follow the escalation guide
+  </Accordion>
+</AccordionGroup>
